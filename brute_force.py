@@ -1,6 +1,4 @@
 import numpy as np
-import sys
-import time
 
 '''
 This class will create a node with an x and y coordinate
