@@ -46,7 +46,8 @@ def bf_sol(graph, size):
     if (size <= len(graph)):
         graph = graph[:size]
 
-    # Max out the "best" distance initially
+    # Create map for a full cycle mapping
+    # distance to node list
     full_traversals = {}
 
     # Create a list of paths to pull from
