@@ -1,3 +1,5 @@
+from brute_force import *
+
 bf_file = open("ulysses16.tsp","rU")
 
 graph = []
@@ -11,3 +13,6 @@ for line in bf_file:
     graph.append(n)
 
 solution = bf_sol(graph, 6)
+
+for node in solution:
+    print node
