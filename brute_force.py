@@ -50,51 +50,6 @@ def bf_sol(graph, size):
     if size <= len(graph):
         graph = graph[:size]
 
-    # Create map for a full cycle mapping
-    # distance to node list
-    full_traversals = {}
-
-    # Create a list of paths to pull from
-    path_list = []
-
-    # Add path consisting of only starting node
-    start_node = graph[0]
-    path_list.append([start_node])
-
-    # Get all possible traversals
-    while path_list:
-
-        # Get path from list
-        path = path_list.pop()
-
-        # If it has traversed the entire graph,
-        # add it to possible solutions
-        if len(path) == len(graph):
-            full_traversals[getCycleLength(path)] = path
-            continue
-
-        # Otherwise, append a new node to the path
-        # and add it to the list of paths to check
-        for node in graph:
-            if node not in path:
-                new_path = []
-                new_path.extend(path)
-                new_path.append(node)
-                path_list.append(new_path)
-
-    # Get the minimum distance
-    min_distance = min(full_traversals)
-
-    # Return the path
-    return full_traversals[min_distance]
-
-
-def bf_sol2(graph, size):
-
-    # Chop size of graph
-    if size <= len(graph):
-        graph = graph[:size]
-
     # Initially, set the smallest path to None
     min_traversal = None
 
