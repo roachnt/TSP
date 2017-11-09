@@ -1,6 +1,6 @@
 from brute_force import *
-import pandas as pd
 import matplotlib.pyplot as plt
+import time, math
 
 bf_file = open("ulysses16.tsp","rU")
 
@@ -26,6 +26,8 @@ for i in range(1,11):
     durations.append(duration)
 
 
-#plt.plot(np.array(df['Graph Size']), np.array(df['Time']))
-plt.plot(graph_sizes, durations, color="red")
+plt.subplot(2, 1, 1)
+plt.plot(graph_sizes, [math.log(i, 10) for i in durations], 'ko-')
+plt.title('Time Analysis of Brute Force Implementation')
+plt.ylabel('Time')
 plt.show()
